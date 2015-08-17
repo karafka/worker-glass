@@ -1,4 +1,6 @@
+require 'spec_helper'
 require 'sidekiq_glass'
+
 RSpec.describe SidekiqGlass::Timeout do
   describe '::perform' do
     context 'block call takes less time than specified' do

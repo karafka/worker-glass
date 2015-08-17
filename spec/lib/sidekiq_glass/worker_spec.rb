@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 RSpec.describe SidekiqGlass::Worker do
   let(:return_value) { 10 }
   let(:param_value) { rand }

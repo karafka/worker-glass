@@ -1,5 +1,4 @@
 require 'sidekiq'
-require 'sidekiq/web'
 
 base_path = File.dirname(__FILE__) + '/sidekiq_glass'
 
