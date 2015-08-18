@@ -1,10 +1,9 @@
-# Sidekiq Glass Worker
+# Sidekiq Glass
 
- Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy)
-
+  Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy)
 
 ## Setup
-When creating a worker that inherits from Strike::BaseWorker, the perform_async method provided by Sidekiq is overriden in order to provide
+When creating a worker that inherits from SidekiqGlass::Worker, the perform_async method provided by Sidekiq is overriden in order to provide
 flexibility in the max number of params a background job can be created with and in the time a background job can take to finish.
 For this, the following methods can be defined:
 
@@ -16,7 +15,7 @@ For this, the following methods can be defined:
 
 ## Usage
 
-Once you've set the gem, you can start using the Strike::BaseWorker as following:
+Once you've set the gem, you can start using the SidekiqGlass::Worker as following:
 
 ```ruby
 class Worker1 < SidekiqGlass::Worker

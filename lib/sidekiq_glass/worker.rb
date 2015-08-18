@@ -10,7 +10,7 @@ module SidekiqGlass
   # @example Create a worker that will have a reentrancy for its task, that will
   #   run for max 15 seconds
   #
-  #   class LazyWorker < Strike::BaseWorker
+  #   class LazyWorker < SidekiqGlass::Worker
   #     self.timeout = 15
   #
   #     def execute(arg)
