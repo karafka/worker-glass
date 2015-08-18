@@ -1,7 +1,26 @@
 require 'sidekiq_glass/version'
 
 module SidekiqGlass
-  # Worker
+  # Base worker class for all other workers
+  # @abstract Subclass can be used for all workers in app
+  # @note Please use the execute method instead of perform - because of the extra
+  #   reentracy layer that has been introduced. Also if you define additional
+  #   after_failure method you can handle any timeout (or any other) errors and ensure
+  #   reentrancy for your workers
+  # @example Create a worker that will have a reentrancy for its task, that will
+  #   run for max 15 seconds
+  #
+  #   class LazyWorker < Strike::BaseWorker
+  #     self.timeout = 15
+  #
+  #     def execute(arg)
+  #       # do some stuff here
+  #     end
+  #
+  #    def after_failure(arg)
+  #      # do something if there is a timeout or any other error
+  #    end
+  #  end
   class Worker
     include Sidekiq::Worker
 
