@@ -2,7 +2,11 @@
 
 [![Build Status](https://travis-ci.org/karafka/sidekiq-glass.svg?branch=master)](https://travis-ci.org/karafka/sidekiq-glass) [![Code Climate](https://codeclimate.com/github/karafka/sidekiq-glass/badges/gpa.svg)](https://codeclimate.com/github/karafka/sidekiq-glass)
 
-  Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy)
+  Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy).
+  
+## Reentrancy
+
+If you don't know what is reentrancy, you can read about it [here](http://dev.mensfeld.pl/2014/05/ruby-rails-sinatra-background-processing-reentrancy-for-your-workers-is-a-must-be/).
 
 ## Setup
 When creating a worker that inherits from SidekiqGlass::Worker, the perform_async method provided by Sidekiq is overriden in order to provide
