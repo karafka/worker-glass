@@ -4,13 +4,10 @@ RSpec.describe SidekiqGlass::Worker do
   let(:return_value) { 10 }
   let(:param_value) { rand }
   let(:dummy_klass) do
-    # Dummy class used to check SidekiqGlass::Worker
-    class DummyWorkerUntimed < SidekiqGlass::Worker
+    ClassBuilder.inherit(SidekiqGlass::Worker) do
       def execute(*_args)
         10
       end
-
-      self
     end
   end
   subject { dummy_klass.new }
@@ -42,15 +39,11 @@ RSpec.describe SidekiqGlass::Worker do
 
     context 'when we set a timeout' do
       let(:dummy_klass) do
-        # Dummy class used to check SidekiqGlass::Worker
-        class DummyWorkerTimed < SidekiqGlass::Worker
+        ClassBuilder.inherit(SidekiqGlass::Worker) do
           self.timeout = 2
-
           def execute(*_args)
             10
           end
-
-          self
         end
       end
       subject { dummy_klass.new }
@@ -78,10 +71,7 @@ RSpec.describe SidekiqGlass::Worker do
 
       context 'and after_failure method is defined' do
         let(:dummy_klass) do
-          # Dummy class used to check SidekiqGlass::Worker
-          class DummyWorkerAfterFailure < SidekiqGlass::Worker
-            self.timeout = 2
-
+          ClassBuilder.inherit(SidekiqGlass::Worker) do
             def execute(*_args)
               10
             end
@@ -89,8 +79,6 @@ RSpec.describe SidekiqGlass::Worker do
             def after_failure(*args)
               puts args
             end
-
-            self
           end
         end
         subject { dummy_klass.new }
