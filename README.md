@@ -19,15 +19,15 @@ Once you've set the gem, you can start using the SidekiqGlass::Worker as followi
 
 ```ruby
 class Worker1 < SidekiqGlass::Worker
-    self.timeout = 1.hour # job can run for 3600 seconds maximum
+  self.timeout = 3600 # job can run for 1 hour max
 
-    def execute(*ids)
-        SomeService.new.process(ids)
-    end
+  def execute(*ids)
+    SomeService.new.process(ids)
+  end
 
-    def after_failure(*ids)
-        SomeService.new.expire!(ids)
-    end
+  def after_failure(*ids)
+    SomeService.new.expire!(ids)
+  end
 end
 
 Worker1.perform_async('id1', 'id2', 'id3')
@@ -35,9 +35,9 @@ Worker1.perform_async('id1', 'id2', 'id3')
 
 ```ruby
 class Worker2 < SidekiqGlass::Worker
-    def execute(first_param, second_param, third_param)
-        SomeService.new.process(first_param, second_param, third_param)
-    end
+  def execute(first_param, second_param, third_param)
+    SomeService.new.process(first_param, second_param, third_param)
+  end
 end
 
 Worker2.perform_async(example1, example2, example3)
