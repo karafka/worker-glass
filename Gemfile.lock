@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/polishgeeks/polishgeeks-dev-tools.git
-  revision: 6799827c21bb2e066a7f6be28f66d413ff60c69b
+  revision: 46984c691f20c83797297597201c16c224cb2c3a
   specs:
     polishgeeks-dev-tools (1.0.0)
       brakeman
@@ -19,7 +19,7 @@ GIT
 PATH
   remote: .
   specs:
-    sidekiq-glass (0.1.0)
+    sidekiq-glass (0.1.1)
       sidekiq (= 3.4.1)
 
 GEM
@@ -57,7 +57,7 @@ GEM
       terminal-table (~> 1.4)
     bson (3.2.1)
     builder (3.2.2)
-    celluloid (0.16.1)
+    celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
     coercible (1.0.0)
@@ -72,7 +72,7 @@ GEM
     docile (1.1.5)
     equalizer (0.0.11)
     erubis (2.7.0)
-    faker (1.4.3)
+    faker (1.5.0)
       i18n (~> 0.5)
     fastercsv (1.5.5)
     flay (2.4.0)
@@ -105,7 +105,7 @@ GEM
       mongoid (~> 4.0.0)
       rake
       rspec (~> 3.1)
-    moped (2.0.6)
+    moped (2.0.7)
       bson (~> 3.0)
       connection_pool (~> 2.0)
       optionable (~> 0.2.0)
@@ -209,6 +209,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  celluloid (= 0.16.0)
   polishgeeks-dev-tools!
-  sidekiq (= 3.4.1)
   sidekiq-glass!
+
+BUNDLED WITH
+   1.10.6
