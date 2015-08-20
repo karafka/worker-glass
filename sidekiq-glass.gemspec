@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = %w( maciej@mensfeld.pl pavlo.vavruk@gmail.com )
   spec.summary       = 'Sidekiq worker timeout and reentrancy!'
   spec.description   = 'Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy)'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/karafka/sidekiq-glass'
   spec.license       = 'MIT'
 
   spec.add_dependency 'sidekiq', '3.4.1'

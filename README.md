@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/karafka/sidekiq-glass.svg?branch=master)](https://travis-ci.org/karafka/sidekiq-glass) [![Code Climate](https://codeclimate.com/github/karafka/sidekiq-glass/badges/gpa.svg)](https://codeclimate.com/github/karafka/sidekiq-glass)
 
   Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy).
-  
+
 ## Reentrancy
 
 If you don't know what is reentrancy, you can read about it [here](http://dev.mensfeld.pl/2014/05/ruby-rails-sinatra-background-processing-reentrancy-for-your-workers-is-a-must-be/).
@@ -48,3 +48,11 @@ end
 
 Worker2.perform_async(example1, example2, example3)
 ```
+
+## Note on Patches/Pull Requests
+
+Fork the project.
+Make your feature addition or bug fix.
+Add tests for it. This is important so I don't break it in a future version unintentionally.
+Commit, do not mess with Rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+Send me a pull request. Bonus points for topic branches.
