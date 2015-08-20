@@ -1,25 +1,8 @@
-GIT
-  remote: git://github.com/polishgeeks/polishgeeks-dev-tools.git
-  revision: 46984c691f20c83797297597201c16c224cb2c3a
-  specs:
-    polishgeeks-dev-tools (1.0.0)
-      brakeman
-      faker
-      haml-lint
-      mongoid-rspec
-      pry
-      rspec
-      rubocop
-      rubycritic (= 1.2.1)
-      shoulda
-      simplecov
-      timecop
-      yard
-
 PATH
   remote: .
   specs:
     sidekiq-glass (0.1.1)
+      celluloid (= 0.16.0)
       sidekiq (= 3.4.1)
 
 GEM
@@ -114,6 +97,19 @@ GEM
     origin (2.1.1)
     parser (2.2.2.6)
       ast (>= 1.1, < 3.0)
+    polishgeeks-dev-tools (1.0.0)
+      brakeman
+      faker
+      haml-lint
+      mongoid-rspec
+      pry
+      rspec
+      rubocop
+      rubycritic (= 1.2.1)
+      shoulda
+      simplecov
+      timecop
+      yard
     powerpack (0.1.1)
     procto (0.0.2)
     pry (0.10.1)
@@ -209,9 +205,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  celluloid (= 0.16.0)
-  polishgeeks-dev-tools!
+  polishgeeks-dev-tools
   sidekiq-glass!
-
-BUNDLED WITH
-   1.10.6

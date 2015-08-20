@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = ''
 
   spec.add_dependency 'sidekiq', '3.4.1'
+  spec.add_dependency 'celluloid', '0.16.0'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(spec)/}) }
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
