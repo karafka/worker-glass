@@ -9,10 +9,10 @@ Gem::Specification.new do |spec|
   spec.platform      = Gem::Platform::RUBY
   spec.authors       = ['Maciej Mensfeld', 'Pavlo Vavruk']
   spec.email         = %w( maciej@mensfeld.pl pavlo.vavruk@gmail.com )
-
-  spec.summary       = ''
+  spec.summary       = 'Sidekiq worker timeout and reentrancy!'
   spec.description   = 'Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy)'
   spec.homepage      = ''
+  spec.license       = 'MIT'
 
   spec.add_dependency 'sidekiq', '3.4.1'
   spec.add_dependency 'celluloid', '0.16.0'
