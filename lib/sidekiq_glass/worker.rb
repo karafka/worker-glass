@@ -26,6 +26,12 @@ module SidekiqGlass
 
     class << self
       attr_accessor :timeout
+      attr_writer :logger
+
+      # @return [Logger] logger that we want to use
+      def logger
+        @logger ||= ::SidekiqGlass::Logger.new
+      end
     end
 
     # @param args Any arguments that we can get from Sidekiq
@@ -37,6 +43,7 @@ module SidekiqGlass
       end
     rescue => exception
       after_failure(*args) if respond_to?(:after_failure)
+      self.class.logger.fatal(exception)
       raise exception
     end
   end
