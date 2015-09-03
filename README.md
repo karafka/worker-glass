@@ -49,6 +49,14 @@ end
 Worker2.perform_async(example1, example2, example3)
 ```
 
+## References
+
+* [Sidekiq](http://sidekiq.org/)
+* [Karafka framework](https://github.com/karafka/karafka)
+* [Waterdrop](https://github.com/karafka/waterdrop)
+* [Sidekiq Glass](https://github.com/karafka/sidekiq-glass)
+* [Envlogic](https://github.com/karafka/envlogic)
+
 ## Note on Patches/Pull Requests
 
 Fork the project.
