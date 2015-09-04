@@ -42,8 +42,8 @@ module SidekiqGlass
         execute(*args)
       end
     rescue => exception
-      after_failure(*args) if respond_to?(:after_failure)
       self.class.logger.fatal(exception)
+      after_failure(*args) if respond_to?(:after_failure)
       raise exception
     end
   end
