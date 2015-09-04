@@ -83,8 +83,11 @@ RSpec.describe SidekiqGlass::Worker do
         end
         subject { dummy_klass.new }
 
-        it 'should execute after_failure and just reraise error' do
+        it 'should execute after_failure, log fatal and just reraise error' do
           expect(subject).to receive(:puts).with([param_value])
+
+          expect(SidekiqGlass::Worker)
+            .to receive_message_chain(:logger, :fatal)
 
           expect { subject.perform(param_value) }.to raise_error StandardError
         end

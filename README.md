@@ -16,6 +16,7 @@ For this, the following methods can be defined:
 | Method           | Arguments | Description                                                                                                   |
 |------------------|-----------|---------------------------------------------------------------------------------------------------------------|
 | self.timeout=    | Integer   | Set the number of seconds that a job can take to finish (if not defined, Sidekiq timeout will be applied)     |
+| self.logger=     | Logger    | Set logger which will be used by Sidekiq Glass (if not defined, null logger will be used)                     |
 | execute          | any_args  | Required method that will be invoked when calling Worker::perform_async                                       |
 | after_failure    | any_args  | Optional method that will be invoked if the execute method fails                                              |
 
