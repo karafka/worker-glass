@@ -30,7 +30,7 @@ module SidekiqGlass
 
       # @return [Logger] logger that we want to use
       def logger
-        @logger ||= ::SidekiqGlass::Logger.new
+        @logger ||= NullLogger.new
       end
     end
 
