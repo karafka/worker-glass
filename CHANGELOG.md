@@ -1,5 +1,9 @@
 # SidekiqGlass changelog
 
+## 0.1.3
+
+- Added null-logger gem
+
 ## 0.1.2
 
 - SidekiqGlass logger implementation
