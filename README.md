@@ -1,6 +1,7 @@
 # Sidekiq Glass
 
 [![Build Status](https://travis-ci.org/karafka/sidekiq-glass.svg?branch=master)](https://travis-ci.org/karafka/sidekiq-glass) [![Code Climate](https://codeclimate.com/github/karafka/sidekiq-glass/badges/gpa.svg)](https://codeclimate.com/github/karafka/sidekiq-glass)
+[![Gem Version](https://badge.fury.io/rb/sidekiq-glass.svg)](http://badge.fury.io/rb/sidekiq-glass)
 
   Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy).
 
