@@ -59,6 +59,8 @@ Worker2.perform_async(example1, example2, example3)
 * [Sidekiq Glass](https://github.com/karafka/sidekiq-glass)
 * [Envlogic](https://github.com/karafka/envlogic)
 * [Null Logger](https://github.com/karafka/null-logger)
+* [Sidekiq Glass Travis CI](https://travis-ci.org/karafka/sidekiq-glass)
+* [Sidekiq Glass Code Climate](https://codeclimate.com/github/karafka/waterdrop)
 
 ## Note on Patches/Pull Requests
 
