@@ -1,5 +1,9 @@
 # SidekiqGlass changelog
 
+## 0.1.4
+
+- New Sidekiq (4.0.1) version dump
+
 ## 0.1.3
 
 - Added null-logger gem

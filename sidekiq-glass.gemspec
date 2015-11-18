@@ -14,8 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/karafka/sidekiq-glass'
   spec.license       = 'MIT'
 
-  spec.add_dependency 'sidekiq', '3.4.1'
-  spec.add_dependency 'celluloid', '0.16.0'
+  spec.add_dependency 'sidekiq', '4.0.1'
   spec.add_dependency 'null-logger'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(spec)/}) }
