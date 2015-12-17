@@ -1,49 +1,45 @@
-# Sidekiq Glass
+# Worker Glass
 
-[![Build Status](https://travis-ci.org/karafka/sidekiq-glass.svg?branch=master)](https://travis-ci.org/karafka/sidekiq-glass) [![Code Climate](https://codeclimate.com/github/karafka/sidekiq-glass/badges/gpa.svg)](https://codeclimate.com/github/karafka/sidekiq-glass)
-[![Gem Version](https://badge.fury.io/rb/sidekiq-glass.svg)](http://badge.fury.io/rb/sidekiq-glass)
+[![Build Status](https://travis-ci.org/karafka/worker-glass.svg?branch=master)](https://travis-ci.org/karafka/worker-glass) [![Code Climate](https://codeclimate.com/github/karafka/worker-glass/badges/gpa.svg)](https://codeclimate.com/github/karafka/worker-glass)
+[![Gem Version](https://badge.fury.io/rb/worker-glass.svg)](http://badge.fury.io/rb/worker-glass)
 
-  Sidekiq worker wrapper that provides optional timeout and after failure (reentrancy).
+  WorkerGlass provides optional timeout and after failure (reentrancy) for background processing worker engines (like Sidekiq, Resque, etc).
 
 ## Reentrancy
 
 If you don't know what is reentrancy, you can read about it [here](http://dev.mensfeld.pl/2014/05/ruby-rails-sinatra-background-processing-reentrancy-for-your-workers-is-a-must-be/).
 
 ## Setup
-When creating a worker that inherits from SidekiqGlass::Worker, the perform_async method provided by Sidekiq is overriden in order to provide
-flexibility in the max number of params a background job can be created with and in the time a background job can take to finish.
-For this, the following methods can be defined:
 
-| Method           | Arguments | Description                                                                                                   |
-|------------------|-----------|---------------------------------------------------------------------------------------------------------------|
-| self.timeout=    | Integer   | Set the number of seconds that a job can take to finish (if not defined, Sidekiq timeout will be applied)     |
-| self.logger=     | Logger    | Set logger which will be used by Sidekiq Glass (if not defined, null logger will be used)                     |
-| execute          | any_args  | Required method that will be invoked when calling Worker::perform_async                                       |
-| after_failure    | any_args  | Optional method that will be invoked if the execute method fails                                              |
+If you want to use timeout and/or reentrancy, please add appropriate modules into your worker.
+
+WorkerGlass allows to configure following options:
+
+| Method           | Arguments | Description                                                                              |
+|------------------|-----------|------------------------------------------------------------------------------------------|
+| self.logger=     | Logger    | Set logger which will be used by Worker Glass (if not defined, null logger will be used) |
 
 ## Usage
 
-Once you've set the gem, you can start using the SidekiqGlass::Worker as following:
+WorkerGlass has few submodules that you can prepend to your workers to obtain given functionalities:
+
+| Module                  | Description                                                       |
+|-------------------------|-------------------------------------------------------------------|
+| WorkerGlass::Reentrancy | Provides additional reentrancy layer if anything goes wrong       |
+| WorkerGlass::Timeout    | Allows to set a timeout after which a given worker task will fail |
+
+
+### WorkerGlass::Timeout
+
+If you want to provide timeouts for your workers, just prepend WorkerGlass::Timeout to your worker and set the timeout value:
 
 ```ruby
-class Worker1 < SidekiqGlass::Worker
-  self.timeout = 3600 # job can run for 1 hour max
+class Worker2 < WorkerGlass::Worker
+  prepend WorkerGlass::Timeout
 
-  def execute(*ids)
-    SomeService.new.process(ids)
-  end
+  self.timeout = 60 # 1 minute timeout
 
-  def after_failure(*ids)
-    SomeService.new.expire!(ids)
-  end
-end
-
-Worker1.perform_async('id1', 'id2', 'id3')
-```
-
-```ruby
-class Worker2 < SidekiqGlass::Worker
-  def execute(first_param, second_param, third_param)
+  def perform(first_param, second_param, third_param)
     SomeService.new.process(first_param, second_param, third_param)
   end
 end
@@ -51,16 +47,36 @@ end
 Worker2.perform_async(example1, example2, example3)
 ```
 
+### WorkerGlass::Reentrancy
+
+If you want to provide reentrancy for your workers, just include WorkerGlass::Reentrancy to your worker and define **after_failure** method that will be executed uppon failure:
+
+```ruby
+class Worker3 < WorkerGlass::Worker
+  include WorkerGlass::Reentrancy
+
+  def perform(first_param, second_param, third_param)
+    SomeService.new.process(first_param, second_param, third_param)
+  end
+
+  def after_failure(first_param, second_param, third_param)
+    SomeService.new.reset_state(first_param, second_param, third_param)
+  end
+end
+
+Worker3.perform_async(example1, example2, example3)
+```
+
 ## References
 
 * [Sidekiq](http://sidekiq.org/)
 * [Karafka framework](https://github.com/karafka/karafka)
 * [Waterdrop](https://github.com/karafka/waterdrop)
-* [Sidekiq Glass](https://github.com/karafka/sidekiq-glass)
+* [Worker Glass](https://github.com/karafka/worker-glass)
 * [Envlogic](https://github.com/karafka/envlogic)
 * [Null Logger](https://github.com/karafka/null-logger)
-* [Sidekiq Glass Travis CI](https://travis-ci.org/karafka/sidekiq-glass)
-* [Sidekiq Glass Code Climate](https://codeclimate.com/github/karafka/sidekiq-glass)
+* [Worker Glass Travis CI](https://travis-ci.org/karafka/worker-glass)
+* [Worker Glass Code Climate](https://codeclimate.com/github/karafka/worker-glass)
 
 ## Note on Patches/Pull Requests
 

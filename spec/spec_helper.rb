@@ -26,4 +26,4 @@ RSpec.configure do |config|
   end
 end
 
-require 'sidekiq_glass'
+require 'worker_glass'
