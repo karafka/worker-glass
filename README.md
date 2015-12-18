@@ -34,7 +34,7 @@ WorkerGlass has few submodules that you can prepend to your workers to obtain gi
 If you want to provide timeouts for your workers, just prepend WorkerGlass::Timeout to your worker and set the timeout value:
 
 ```ruby
-class Worker2 < WorkerGlass::Worker
+class Worker2
   prepend WorkerGlass::Timeout
 
   self.timeout = 60 # 1 minute timeout
@@ -52,7 +52,7 @@ Worker2.perform_async(example1, example2, example3)
 If you want to provide reentrancy for your workers, just include WorkerGlass::Reentrancy to your worker and define **after_failure** method that will be executed uppon failure:
 
 ```ruby
-class Worker3 < WorkerGlass::Worker
+class Worker3
   include WorkerGlass::Reentrancy
 
   def perform(first_param, second_param, third_param)
