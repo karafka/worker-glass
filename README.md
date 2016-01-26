@@ -49,11 +49,11 @@ Worker2.perform_async(example1, example2, example3)
 
 ### WorkerGlass::Reentrancy
 
-If you want to provide reentrancy for your workers, just include WorkerGlass::Reentrancy to your worker and define **after_failure** method that will be executed uppon failure:
+If you want to provide reentrancy for your workers, just prepend WorkerGlass::Reentrancy to your worker and define **after_failure** method that will be executed uppon failure:
 
 ```ruby
 class Worker3
-  include WorkerGlass::Reentrancy
+  prepend WorkerGlass::Reentrancy
 
   def perform(first_param, second_param, third_param)
     SomeService.new.process(first_param, second_param, third_param)
