@@ -22,7 +22,7 @@ module WorkerGlass
     # @param args Any arguments that we passed when scheduling a background job
     # @raise [WorkerGlass::Errors::TimeoutNotDefined] if we didn't define timeout
     def perform(*args)
-      fail Errors::TimeoutNotDefined unless self.class.timeout
+      raise Errors::TimeoutNotDefined unless self.class.timeout
 
       ::Timeout.timeout(self.class.timeout, Errors::TimeoutError) { super }
     end
