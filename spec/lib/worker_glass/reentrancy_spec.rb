@@ -3,8 +3,10 @@ require 'spec_helper'
 RSpec.describe WorkerGlass::Reentrancy do
   let(:param_value) { rand }
   let(:dummy_klass) do
+    prepended = described_class
+
     ClassBuilder.build do
-      prepend WorkerGlass::Reentrancy
+      prepend prepended
 
       def perform(*args)
         run

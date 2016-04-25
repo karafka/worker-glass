@@ -3,8 +3,10 @@ require 'spec_helper'
 RSpec.describe WorkerGlass::Timeout do
   let(:params_values) { Array.new(rand(10)) { rand } }
   let(:dummy_klass) do
+    prepended = described_class
+
     ClassBuilder.build do
-      prepend WorkerGlass::Timeout
+      prepend prepended
 
       self.timeout = 1
 
@@ -39,8 +41,10 @@ RSpec.describe WorkerGlass::Timeout do
 
   context 'when timeout is not defined' do
     let(:dummy_klass) do
+      prepended = described_class
+
       ClassBuilder.build do
-        prepend WorkerGlass::Timeout
+        prepend prepended
 
         def perform(*args)
         end

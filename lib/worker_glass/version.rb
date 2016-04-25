@@ -2,5 +2,5 @@
 # Main wrapper
 module WorkerGlass
   # Current version of WorkerGlass gem
-  VERSION = '0.2.1'.freeze
+  VERSION = '0.2.1'
 end

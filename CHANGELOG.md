@@ -6,6 +6,7 @@
 - WorkerGlass no longer required
 - WorkerGlass::Timeout
 - WorkerGlass::Reentrancy
+- Dev Tools and gems update
 
 ## 0.1.4
 

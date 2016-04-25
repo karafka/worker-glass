@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 RSpec.describe WorkerGlass do
-  it { expect { described_class::VERSION }.to_not raise_error }
+  it { expect { described_class::VERSION }.not_to raise_error }
 end
