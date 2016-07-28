@@ -2,6 +2,9 @@
 
 ## 0.2.2
 - Gem dump
+- Ruby 2.1.* support dropped
+- Ruby 2.3.1 as default
+- Ruby 2.2 as minimal version
 
 ## 0.2.0
 - Renamed from SidekiqGlass to WorkerGlass because if now does not require Sidekiq anymore to work. It will provide additional worker functionalities to any type of backend processing layer as long as it has a #perform method.

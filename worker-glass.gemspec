@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Background worker wrappers that provides optional timeout and after failure (reentrancy)'
   spec.homepage      = 'https://github.com/karafka/worker-glass'
   spec.license       = 'MIT'
+  spec.required_ruby_version = '>= 2.2.0'
 
   spec.add_dependency 'null-logger'
   spec.add_dependency 'activesupport'
