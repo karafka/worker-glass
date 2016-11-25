@@ -3,7 +3,7 @@
 ## 0.2.2
 - Gem dump
 - Ruby 2.1.* support dropped
-- Ruby 2.3.1 as default
+- Ruby 2.3.3 as default
 - Ruby 2.2 as minimal version
 
 ## 0.2.0
