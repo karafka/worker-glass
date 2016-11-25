@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 RSpec.describe WorkerGlass::Timeout do
+  subject(:dummy_instance) { dummy_klass.new }
+
   let(:params_values) { Array.new(rand(10)) { rand } }
   let(:dummy_klass) do
     prepended = described_class
@@ -17,24 +19,21 @@ RSpec.describe WorkerGlass::Timeout do
     end
   end
 
-  subject { dummy_klass.new }
-
   describe '#perform' do
-    context 'when timeout is defined' do
-      context 'it runs fast enough' do
-        let(:sleep_time) { 0 }
+    context 'when timeout is defined and it runs fast enough' do
+      let(:sleep_time) { 0 }
 
-        it 'expect to run and return value of #perform' do
-          expect(subject.perform(sleep_time)).to eq sleep_time * 2
-        end
+      it 'expect to run and return value of #perform' do
+        expect(dummy_instance.perform(sleep_time)).to eq sleep_time * 2
       end
+    end
 
-      context 'it runs too slow' do
-        let(:sleep_time) { 2 }
+    context 'when timeout is defined and it runs too slow' do
+      let(:sleep_time) { 2 }
 
-        it 'expect to fail with Timeout error' do
-          expect { subject.perform(sleep_time) }.to raise_error WorkerGlass::Errors::TimeoutError
-        end
+      it 'expect to fail with Timeout error' do
+        error = WorkerGlass::Errors::TimeoutError
+        expect { dummy_instance.perform(sleep_time) }.to raise_error error
       end
     end
   end
@@ -52,7 +51,7 @@ RSpec.describe WorkerGlass::Timeout do
     end
 
     it 'expect to raise TimeoutNotDefined error' do
-      expect { subject.perform }.to raise_error WorkerGlass::Errors::TimeoutNotDefined
+      expect { dummy_instance.perform }.to raise_error WorkerGlass::Errors::TimeoutNotDefined
     end
   end
 end
