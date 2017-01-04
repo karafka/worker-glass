@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 RSpec.describe WorkerGlass::Reentrancy do
   subject(:dummy_instance) { dummy_class.new }
 

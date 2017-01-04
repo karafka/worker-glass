@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 RSpec.describe WorkerGlass::Timeout do
   subject(:dummy_instance) { dummy_klass.new }
 

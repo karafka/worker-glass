@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 # This file basically only requires stuff
 RSpec.describe WorkerGlass do
   subject(:worker_glass) { described_class }
