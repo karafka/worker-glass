@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe WorkerGlass::Reentrancy do
   subject(:dummy_instance) { dummy_class.new }
 
@@ -17,8 +19,7 @@ RSpec.describe WorkerGlass::Reentrancy do
         10
       end
 
-      def after_failure(*_)
-      end
+      def after_failure(*_); end
     end
   end
   let(:dummy_class) { base_class }
@@ -47,10 +48,6 @@ RSpec.describe WorkerGlass::Reentrancy do
       end
 
       it 'expect to run after_failure and reraise' do
-        expect(dummy_instance)
-          .to receive(:after_failure)
-          .with(param_value)
-
         expect { dummy_instance.perform(param_value) }.to raise_error error
       end
     end

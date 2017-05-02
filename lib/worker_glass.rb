@@ -1,16 +1,19 @@
-%w(
+# frozen_string_literal: true
+
+%w[
   null_logger
+  timeout
   active_support/core_ext/class/attribute
-).each { |lib| require lib }
+].each { |lib| require lib }
 
 base_path = File.dirname(__FILE__) + '/worker_glass'
 
-%w(
+%w[
   version
   errors
   timeout
   reentrancy
-).each { |lib| require File.join(base_path, lib) }
+].each { |lib| require File.join(base_path, lib) }
 
 # Background worker wrappers that provides optional timeout and after failure (reentrancy)
 module WorkerGlass

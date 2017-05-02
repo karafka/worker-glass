@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WorkerGlass
   # This module provides additional timeout functionality for background processing engine
   # @example Example usage with Sidekiq - will fail with timeout error after 10 seconds

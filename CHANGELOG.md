@@ -1,5 +1,11 @@
 # WorkerGlass changelog
 
+## Unreleased
+- Gem bump
+- Ruby 2.4.1 as default
+- Coditsu quality hookup
+- Readme updates
+
 ## 0.2.2
 - Gem dump x2
 - Ruby 2.1.* support dropped

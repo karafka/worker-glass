@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe WorkerGlass::Timeout do
   subject(:dummy_instance) { dummy_klass.new }
 
@@ -43,8 +45,7 @@ RSpec.describe WorkerGlass::Timeout do
       ClassBuilder.build do
         prepend prepended
 
-        def perform(*args)
-        end
+        def perform(*args); end
       end
     end
 

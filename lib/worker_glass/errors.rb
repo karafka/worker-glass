@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WorkerGlass
   # Module enclosing all the errors that might be raised from this library
   module Errors

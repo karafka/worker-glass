@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WorkerGlass
   # This module provides a reentrancy functionality for background processing engine
   # @note If will reraise a given error - it does not silence them
