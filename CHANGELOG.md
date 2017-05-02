@@ -1,6 +1,6 @@
 # WorkerGlass changelog
 
-## Unreleased
+## 0.2.3
 - Gem bump
 - Ruby 2.4.1 as default
 - Coditsu quality hookup
