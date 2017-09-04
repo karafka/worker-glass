@@ -1,7 +1,6 @@
 # Worker Glass
 
-[![Build Status](https://travis-ci.org/karafka/worker-glass.svg?branch=master)](https://travis-ci.org/karafka/worker-glass) [![Code Climate](https://codeclimate.com/github/karafka/worker-glass/badges/gpa.svg)](https://codeclimate.com/github/karafka/worker-glass)
-[![Gem Version](https://badge.fury.io/rb/worker-glass.svg)](http://badge.fury.io/rb/worker-glass)
+[![Build Status](https://travis-ci.org/karafka/worker-glass.svg?branch=master)](https://travis-ci.org/karafka/worker-glass) 
 [![Join the chat at https://gitter.im/karafka/karafka](https://badges.gitter.im/karafka/karafka.svg)](https://gitter.im/karafka/karafka?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
   WorkerGlass provides optional timeout and after failure (reentrancy) for background processing worker engines (like Sidekiq, Resque, etc).
@@ -70,15 +69,9 @@ Worker3.perform_async(example1, example2, example3)
 
 ## References
 
-* [Sidekiq](http://sidekiq.org/)
 * [Karafka framework](https://github.com/karafka/karafka)
-* [Capistrano Karafka](https://github.com/karafka/capistrano-karafka)
-* [Waterdrop](https://github.com/karafka/waterdrop)
-* [Worker Glass](https://github.com/karafka/worker-glass)
-* [Envlogic](https://github.com/karafka/envlogic)
-* [Null Logger](https://github.com/karafka/null-logger)
 * [Worker Glass Travis CI](https://travis-ci.org/karafka/worker-glass)
-* [Worker Glass Code Climate](https://codeclimate.com/github/karafka/worker-glass)
+* [Worker Glass Coditsu](https://app.coditsu.io/karafka/repositories/worker-glass)
 
 ## Note on Patches/Pull Requests
 
@@ -87,9 +80,11 @@ Make your feature addition or bug fix.
 Add tests for it. This is important so I don't break it in a future version unintentionally.
 Commit, do not mess with Rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull). Send me a pull request. Bonus points for topic branches.
 
-[![coditsu](https://coditsu.io/assets/quality_bar.svg)](https://coditsu.io)
+[![coditsu](https://coditsu.io/assets/quality_bar.svg)](https://app.coditsu.io/karafka/repositories/worker-glass)
 
-Each pull request must pass our quality requirements. To check if everything is as it should be, we use [Coditsu](https://coditsu.io) that combinse multiple linters and code analyzers. Unfortunately, for now it is invite-only based, so just ping us and we will give you access to the quality results.
+Each pull request must pass our quality requirements. To check if everything is as it should be, we use [Coditsu](https://coditsu.io) that combinse multiple linters and code analyzers.
+
+Unfortunately, it does not yet support independent forks, however you should be fine by looking at what we require.
 
 Please run:
 
