@@ -1,5 +1,8 @@
 # WorkerGlass changelog
 
+## Unreleased
+- Ruby 2.4.2 support
+
 ## 0.2.3
 - Gem bump
 - Ruby 2.4.1 as default
