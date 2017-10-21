@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 2.2.0'
 
-  spec.add_dependency 'null-logger'
   spec.add_dependency 'activesupport'
+  spec.add_dependency 'null-logger'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(spec)/}) }
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
