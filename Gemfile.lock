@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    worker-glass (0.2.4)
+    worker-glass (0.2.5)
       activesupport
       null-logger
 

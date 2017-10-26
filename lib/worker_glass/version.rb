@@ -3,5 +3,5 @@
 # Main wrapper
 module WorkerGlass
   # Current version of WorkerGlass gem
-  VERSION = '0.2.4'
+  VERSION = '0.2.5'
 end
