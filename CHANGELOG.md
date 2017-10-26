@@ -1,7 +1,8 @@
 # WorkerGlass changelog
 
-## Unreleased
+## 0.2.4 - Unreleased
 - Ruby 2.4.2 support
+- Removed rake as one of dependencies
 
 ## 0.2.3
 - Gem bump
