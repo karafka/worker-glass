@@ -25,13 +25,13 @@ RSpec.describe WorkerGlass::Reentrancy do
   let(:dummy_class) { base_class }
 
   describe '#perform' do
-    context 'it runs without issues' do
+    context 'when it runs without issues' do
       it 'expect to run and return value of #perform' do
         expect(dummy_instance.perform(param_value)).to eq param_value * 2
       end
     end
 
-    context 'it fails to run' do
+    context 'when it fails to run' do
       let(:error) { StandardError }
 
       let(:dummy_class) do
