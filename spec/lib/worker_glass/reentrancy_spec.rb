@@ -19,7 +19,7 @@ RSpec.describe WorkerGlass::Reentrancy do
         10
       end
 
-      def after_failure(*_); end
+      def after_failure(*_args); end
     end
   end
   let(:dummy_class) { base_class }
