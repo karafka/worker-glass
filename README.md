@@ -49,7 +49,7 @@ Worker2.perform_async(example1, example2, example3)
 
 ### WorkerGlass::Reentrancy
 
-If you want to provide reentrancy for your workers, just prepend WorkerGlass::Reentrancy to your worker and define **after_failure** method that will be executed uppon failure:
+If you want to provide reentrancy for your workers, just prepend WorkerGlass::Reentrancy to your worker and define **after_failure** method that will be executed upon failure:
 
 ```ruby
 class Worker3
@@ -77,7 +77,7 @@ Worker3.perform_async(example1, example2, example3)
 
 First, thank you for considering contributing to Worker Glass! It's people like you that make the open source community such a great community!
 
-Each pull request must pass all the rspec specs and meet our quality requirements.
+Each pull request must pass all the RSpec specs and meet our quality requirements.
 
 To check if everything is as it should be, we use [Coditsu](https://coditsu.io) that combines multiple linters and code analyzers for both code and documentation. Once you're done with your changes, submit a pull request.
 
