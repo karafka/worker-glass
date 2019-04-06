@@ -21,10 +21,10 @@ module WorkerGlass
     # @param args Any arguments that we passed when scheduling a background job
     def perform(*args)
       super
-    rescue StandardError => exception
-      WorkerGlass.logger.fatal(exception)
+    rescue StandardError => e
+      WorkerGlass.logger.fatal(e)
       after_failure(*args)
-      raise exception
+      raise e
     end
   end
 end
