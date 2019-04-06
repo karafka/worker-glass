@@ -4,6 +4,7 @@
 .config
 .idea
 .yardoc
+.coditsu/local.yml
 InstalledFiles
 _yardoc
 coverage
