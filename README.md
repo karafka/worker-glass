@@ -2,7 +2,7 @@
 
 **Note**: This library is no longer in use in the Karafka ecosystem. It was developed for Karafka versions prior to `1.0`. If you're using this library and want to take it over, please ping us.
 
-[![Build Status](https://travis-ci.org/karafka/worker-glass.svg?branch=master)](https://travis-ci.org/karafka/worker-glass) 
+[![Build Status](https://travis-ci.org/karafka/worker-glass.svg?branch=master)](https://travis-ci.org/karafka/worker-glass)
 [![Join the chat at https://gitter.im/karafka/karafka](https://badges.gitter.im/karafka/karafka.svg)](https://gitter.im/karafka/karafka?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
   WorkerGlass provides optional timeout and after failure (reentrancy) for background processing worker engines (like Sidekiq, Resque, etc).

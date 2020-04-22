@@ -6,7 +6,10 @@
 - drop ruby 2.4 support
 - Ruby 2.5.5 support
 - Ruby 2.6.5 support
+- Ruby 2.7.1 support
 - Removed rake as one of dependencies
+- Replace Travis with GH Actions
+- Add certificates support
 
 ## 0.2.3
 - Gem bump
