@@ -10,6 +10,8 @@
 - Removed rake as one of dependencies
 - Replace Travis with GH Actions
 - Add certificates support
+- Add JRuby support
+- Add TruffleRuby support
 
 ## 0.2.3
 - Gem bump
