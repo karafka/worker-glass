@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Timeout and Reentrancy for your background processing workers!'
   spec.description   = 'Background worker wrappers that provides optional timeout and reentrancy'
   spec.homepage      = 'https://github.com/karafka/worker-glass'
-  spec.license       = 'MIT'
+  spec.license       = 'LGPL-3.0'
   spec.required_ruby_version = '>= 2.5.0'
 
   spec.add_dependency 'activesupport'
