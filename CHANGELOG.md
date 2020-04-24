@@ -1,6 +1,6 @@
 # WorkerGlass changelog
 
-## Unreleased (master)
+## 0.2.5 (2020-04-24)
 - drop ruby 2.2 support
 - drop ruby 2.3 support
 - drop ruby 2.4 support
@@ -12,6 +12,7 @@
 - Add certificates support
 - Add JRuby support
 - Add TruffleRuby support
+- Change license to LGPL-3.0
 
 ## 0.2.3
 - Gem bump
