@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.version       = WorkerGlass::VERSION
   spec.platform      = Gem::Platform::RUBY
   spec.authors       = ['Maciej Mensfeld', 'Pavlo Vavruk']
-  spec.email         = %w[maciej@coditsu.io pavlo.vavruk@gmail.com]
+  spec.email         = %w[maciej@mensfeld.pl pavlo.vavruk@gmail.com]
   spec.summary       = 'Timeout and Reentrancy for your background processing workers!'
   spec.description   = 'Background worker wrappers that provides optional timeout and reentrancy'
   spec.homepage      = 'https://github.com/karafka/worker-glass'
