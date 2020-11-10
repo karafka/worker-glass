@@ -6,7 +6,7 @@
   active_support/core_ext/class/attribute
 ].each { |lib| require lib }
 
-base_path = File.dirname(__FILE__) + '/worker_glass'
+base_path = File.join(File.dirname(__FILE__), 'worker_glass')
 
 %w[
   version
