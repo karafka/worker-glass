@@ -4,7 +4,7 @@
 
 [![Build Status](https://github.com/karafka/worker-glass/workflows/ci/badge.svg)](https://github.com/karafka/worker-glass/actions?query=workflow%3Aci)
 [![Gem Version](https://badge.fury.io/rb/worker-glass.svg)](http://badge.fury.io/rb/worker-glass)
-[![Join the chat at https://gitter.im/karafka/karafka](https://badges.gitter.im/karafka/karafka.svg)](https://gitter.im/karafka/karafka?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/karafka/karafka](https://badges.gitter.im/karafka/karafka.svg)](https://gitter.im/karafka/karafka)
 
   WorkerGlass provides optional timeout and after failure (reentrancy) for background processing worker engines (like Sidekiq, Resque, etc).
 
