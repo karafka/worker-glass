@@ -4,9 +4,9 @@
 
 [![Build Status](https://github.com/karafka/worker-glass/workflows/ci/badge.svg)](https://github.com/karafka/worker-glass/actions?query=workflow%3Aci)
 [![Gem Version](https://badge.fury.io/rb/worker-glass.svg)](http://badge.fury.io/rb/worker-glass)
-[![Join the chat at https://gitter.im/karafka/karafka](https://badges.gitter.im/karafka/karafka.svg)](https://gitter.im/karafka/karafka)
+[![Join the chat at https://slack.karafka.io](https://raw.githubusercontent.com/karafka/misc/master/slack.svg)](https://slack.karafka.io)
 
-  WorkerGlass provides optional timeout and after failure (reentrancy) for background processing worker engines (like Sidekiq, Resque, etc).
+WorkerGlass provides optional timeout and after failure (reentrancy) for background processing worker engines (like Sidekiq, Resque, etc).
 
 ## Reentrancy
 
@@ -78,10 +78,8 @@ Worker3.perform_async(example1, example2, example3)
 
 ## Note on contributions
 
-First, thank you for considering contributing to Worker Glass! It's people like you that make the open source community such a great community!
+First, thank you for considering contributing to the Karafka ecosystem! It's people like you that make the open source community such a great community!
 
-Each pull request must pass all the RSpec specs and meet our quality requirements.
+Each pull request must pass all the RSpec specs, integration tests and meet our quality requirements.
 
-To check if everything is as it should be, we use [Coditsu](https://coditsu.io) that combines multiple linters and code analyzers for both code and documentation. Once you're done with your changes, submit a pull request.
-
-Coditsu will automatically check your work against our quality standards. You can find your commit check results on the [builds page](https://app.coditsu.io/karafka/repositories/worker-glass/builds/commit_builds) of Worker Glass repository.
+Fork it, update and wait for the Github Actions results.
